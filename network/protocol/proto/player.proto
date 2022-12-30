@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package player;
+option go_package = "/player";
+
+// 请求登入
+message CSLogin{
+  string UserName = 1; //用户名
+  string Password = 2; //密码
+}
+
+// 登入返回数据
+message SCLogin{
+  bool Ok = 1;
+}
+
+// 请求创建角色
+message CSCreatePlayer{
+  string UserName = 1; //用户名
+  string Password = 2; //密码
+}
+
+// 创建角色返回数据
+message SCCreatePlayer{
+
+}
+
+// 请求添加好友
+message CSAddFriend{
+  uint64 UId = 1;
+}
+
+// 添加好友返回数据
+message SCADDFriend{
+  string Desc = 1; //请求成功是否描述
+}
+
+// 请求删除好友
+message CSDelFriend{
+  uint64 UId = 1; //玩家Id
+}
+
+// 删除好友返回数据
+message SCDelFriend{
+  string Desc = 1; //请求成功是否描述
+}
+
+// 请求聊天请求
+message CSSendChatMsg{
+  uint64 UId = 1;
+  ChatMessage msg = 2;
+  int32 Category = 3; //聊天类型
+}
+
+// 聊天返回数据
+message SCSendChatMsg{
+
+}
+
+// 聊天返回数据
+message ChatMessage{
+  string Content = 1;
+  repeated bytes extra = 2;
+}
+// /google/golang/org/protobuf/reflect/protoreflect
+//  google.golang.org/protobuf/reflect/protoreflect
