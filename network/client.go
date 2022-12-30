@@ -34,19 +34,15 @@ func (c *Client) Run() {
 }
 
 func (c *Client) Write(conn net.Conn) {
-	tick := time.NewTicker(time.Second)
-	// 每秒钟tick一次
 	for {
 		select {
-		case <-tick.C:
-			c.send(conn, &Message{
-				Id:   111,
-				Data: []byte("hello World"),
-			})
+		case msg := <-c.ChMsg:
+			c.send(conn, msg)
 		}
 	}
 }
 
+// send 发送消息
 func (c *Client) send(conn net.Conn, message *Message) {
 	err := conn.SetWriteDeadline(time.Now().Add(time.Second))
 	if err != nil {
