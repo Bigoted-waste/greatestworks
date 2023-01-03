@@ -46,7 +46,7 @@ func (s *Session) Read() {
 		log.Logger.InfoF("服务端接受消息: ", string(message.Data))
 		s.WriteCh <- &Message{
 			Id:   99,
-			Data: []byte("hi cola"),
+			Data: []byte("pong"),
 		}
 	}
 }

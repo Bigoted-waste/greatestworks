@@ -8,9 +8,9 @@ import (
 )
 
 type Client struct {
-	Address   string
-	packer    NormalPacker
-	ChMsg     chan *Message
+	Address   string        //地址
+	packer    NormalPacker  //包
+	ChMsg     chan *Message //
 	OnMessage func(packet *ClientPacket)
 }
 

@@ -15,7 +15,7 @@ func NewNormalPacker(order binary.ByteOrder) *NormalPacker {
 	return &NormalPacker{Order: order}
 }
 
-// Pack | message 长度 | id | data |
+// Pack 装包 | message 长度 | id | data |
 func (p *NormalPacker) Pack(message *Message) ([]byte, error) {
 	buffer := make([]byte, 8+8+len(message.Data))
 	p.Order.PutUint64(buffer[:8], uint64(len(buffer)))
@@ -24,7 +24,7 @@ func (p *NormalPacker) Pack(message *Message) ([]byte, error) {
 	return buffer, nil
 }
 
-// Unpack ...
+// Unpack 解包
 func (p *NormalPacker) Unpack(reader io.Reader) (*Message, error) {
 	err := reader.(*net.TCPConn).SetReadDeadline(time.Now().Add(time.Second))
 	if err != nil {
