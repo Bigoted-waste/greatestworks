@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/phuhao00/sugar"
-	"greatestworks/world"
+	"greatestworks/business/world"
 )
 
 func main() {

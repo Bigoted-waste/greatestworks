@@ -3,7 +3,7 @@ package player
 import (
 	"github.com/phuhao00/sugar"
 	"google.golang.org/protobuf/proto"
-	"greatestworks/log"
+	"greatestworks/aop/logger"
 	"greatestworks/network"
 	"greatestworks/network/protocol/gen/player"
 )
@@ -36,6 +36,6 @@ func (p *Player) ResolveChatMsg(msg *network.Message) {
 	if err != nil {
 		return
 	}
-	log.Logger.InfoF(req.Msg.Content)
+	logger.Logger.InfoF(req.Msg.Content)
 	// todo 收到消息 然后转发给客户端（当你的好友非你发消息情况）
 }

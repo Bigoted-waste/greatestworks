@@ -1,8 +1,8 @@
 package world
 
 import (
-	"greatestworks/log"
-	"greatestworks/manager"
+	"greatestworks/aop/logger"
+	"greatestworks/business/manager"
 	"greatestworks/network"
 	"greatestworks/network/protocol/gen/messageId"
 	"os"
@@ -41,7 +41,7 @@ func (mm *MgrMgr) OnSessionPacket(packet *network.SessionPacket) {
 }
 
 func (mm *MgrMgr) OnSystemSignal(signal os.Signal) bool {
-	log.Logger.InfoF("[MgrMgr] 收到信号 %v \n", signal)
+	logger.Logger.InfoF("[MgrMgr] 收到信号 %v \n", signal)
 	tag := true
 	switch signal {
 	case syscall.SIGHUP:
@@ -49,7 +49,7 @@ func (mm *MgrMgr) OnSystemSignal(signal os.Signal) bool {
 	case syscall.SIGPIPE:
 		// TODO
 	default:
-		log.Logger.InfoF("[MgrMgr] 收到信号准备退出。。。")
+		logger.Logger.InfoF("[MgrMgr] 收到信号准备退出。。。")
 		tag = false
 	}
 	return tag

@@ -3,7 +3,7 @@ package network
 import (
 	"encoding/binary"
 	"fmt"
-	"greatestworks/log"
+	"greatestworks/aop/logger"
 	"net"
 	"time"
 )
@@ -40,10 +40,10 @@ func (s *Session) Read() {
 	for {
 		message, err := s.packer.Unpack(s.conn)
 		if err != nil {
-			log.Logger.ErrorF(err.Error())
+			logger.Logger.ErrorF(err.Error())
 			continue
 		}
-		log.Logger.InfoF("服务端接受消息: ", string(message.Data))
+		logger.Logger.InfoF("服务端接受消息: ", string(message.Data))
 		s.WriteCh <- &Message{
 			Id:   99,
 			Data: []byte("pong"),
@@ -54,7 +54,7 @@ func (s *Session) Read() {
 func (s *Session) Write() {
 	err := s.conn.SetReadDeadline(time.Now().Add(time.Second))
 	if err != nil {
-		log.Logger.ErrorF(err.Error())
+		logger.Logger.ErrorF(err.Error())
 		return
 	}
 	for {
@@ -68,7 +68,7 @@ func (s *Session) Write() {
 func (s *Session) send(message *Message) {
 	err := s.conn.SetWriteDeadline(time.Now().Add(time.Second))
 	if err != nil {
-		log.Logger.ErrorF(err.Error())
+		logger.Logger.ErrorF(err.Error())
 		return
 	}
 	bytes, err := s.packer.Pack(message)
@@ -77,7 +77,7 @@ func (s *Session) send(message *Message) {
 	}
 	_, err = s.conn.Write(bytes)
 	if err != nil {
-		log.Logger.ErrorF(err.Error())
+		logger.Logger.ErrorF(err.Error())
 	}
 }
 

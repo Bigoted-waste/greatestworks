@@ -2,10 +2,10 @@ package world
 
 import (
 	"google.golang.org/protobuf/proto"
-	"greatestworks/log"
+	"greatestworks/aop/logger"
+	logicPlayer "greatestworks/business/player"
 	"greatestworks/network"
 	"greatestworks/network/protocol/gen/player"
-	logicPlayer "greatestworks/player"
 	"time"
 )
 
@@ -29,7 +29,7 @@ func (mm *MgrMgr) CreatePlayer(message *network.SessionPacket) {
 	if err != nil { //
 		return
 	}
-	log.Logger.InfoF("[MgrMgr.CreatePlayer] >>>>", msg)
+	logger.Logger.InfoF("[MgrMgr.CreatePlayer] >>>>", msg)
 	mm.SendMsg(message.Msg.Id, &player.SCCreatePlayer{}, message.Sess)
 }
 

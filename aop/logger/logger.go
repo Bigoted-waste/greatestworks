@@ -1,4 +1,4 @@
-package log
+package logger
 
 import (
 	"github.com/phuhao00/spoor"
@@ -14,7 +14,7 @@ var (
 
 func init() {
 	onceInitLogger.Do(func() {
-		//fileWriter := spoor.NewFileWriter("log", 0, 0, 0)
+		//fileWriter := spoor.NewFileWriter("logger", 0, 0, 0)
 		l := spoor.NewSpoor(spoor.DEBUG, "", log.Ldate|log.Ltime|log.Lmicroseconds|log.Llongfile, spoor.WithConsoleWriter(os.Stdout))
 		Logger = l
 	})
