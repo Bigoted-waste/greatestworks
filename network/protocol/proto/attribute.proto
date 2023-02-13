@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package messageId;
+
+option go_package = "/attribute";
+
+// daily update attribute
+enum AttributeDaily{
+  NoneDaily = 0;
+}
+
+enum AttributeWeekly{
+  NoneWeekly = 0;
+}
+
+enum AttributeMonthly{
+  NoneMonthly = 0;
+}
+
+enum AttributeOnce{
+  NoneOnce = 0;
+}

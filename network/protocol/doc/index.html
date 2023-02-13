@@ -175,6 +175,33 @@
         
           
           <li>
+            <a href="#proto%2fattribute.proto">proto/attribute.proto</a>
+            <ul>
+              
+              
+                <li>
+                  <a href="#messageId.AttributeDaily"><span class="badge">E</span>AttributeDaily</a>
+                </li>
+              
+                <li>
+                  <a href="#messageId.AttributeMonthly"><span class="badge">E</span>AttributeMonthly</a>
+                </li>
+              
+                <li>
+                  <a href="#messageId.AttributeOnce"><span class="badge">E</span>AttributeOnce</a>
+                </li>
+              
+                <li>
+                  <a href="#messageId.AttributeWeekly"><span class="badge">E</span>AttributeWeekly</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#proto%2fmessageId.proto">proto/messageId.proto</a>
             <ul>
               
@@ -247,6 +274,88 @@
       </ul>
     </div>
 
+    
+      
+      <div class="file-heading">
+        <h2 id="proto/attribute.proto">proto/attribute.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+        <h3 id="messageId.AttributeDaily">AttributeDaily</h3>
+        <p>daily update attribute</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>NoneDaily</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="messageId.AttributeMonthly">AttributeMonthly</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>NoneMonthly</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="messageId.AttributeOnce">AttributeOnce</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>NoneOnce</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="messageId.AttributeWeekly">AttributeWeekly</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>NoneWeekly</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
     
       
       <div class="file-heading">
@@ -347,7 +456,7 @@
 
       
         <h3 id="player.CSAddFriend">CSAddFriend</h3>
-        <p></p>
+        <p>请求添加好友</p>
 
         
           <table class="field-table">
@@ -371,7 +480,7 @@
         
       
         <h3 id="player.CSCreatePlayer">CSCreatePlayer</h3>
-        <p></p>
+        <p>请求创建角色</p>
 
         
           <table class="field-table">
@@ -384,14 +493,14 @@
                   <td>UserName</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>用户名 </p></td>
                 </tr>
               
                 <tr>
                   <td>Password</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>密码 </p></td>
                 </tr>
               
             </tbody>
@@ -402,7 +511,7 @@
         
       
         <h3 id="player.CSDelFriend">CSDelFriend</h3>
-        <p></p>
+        <p>请求删除好友</p>
 
         
           <table class="field-table">
@@ -426,7 +535,7 @@
         
       
         <h3 id="player.CSLogin">CSLogin</h3>
-        <p></p>
+        <p>请求登入</p>
 
         
           <table class="field-table">
@@ -439,14 +548,14 @@
                   <td>UserName</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>用户名 </p></td>
                 </tr>
               
                 <tr>
                   <td>Password</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>密码 </p></td>
                 </tr>
               
             </tbody>
@@ -457,7 +566,7 @@
         
       
         <h3 id="player.CSSendChatMsg">CSSendChatMsg</h3>
-        <p>聊天请求</p>
+        <p>请求聊天请求</p>
 
         
           <table class="field-table">
@@ -495,7 +604,7 @@
         
       
         <h3 id="player.ChatMessage">ChatMessage</h3>
-        <p></p>
+        <p>聊天返回数据</p>
 
         
           <table class="field-table">
@@ -526,7 +635,7 @@
         
       
         <h3 id="player.SCADDFriend">SCADDFriend</h3>
-        <p></p>
+        <p>添加好友返回数据</p>
 
         
           <table class="field-table">
@@ -550,14 +659,14 @@
         
       
         <h3 id="player.SCCreatePlayer">SCCreatePlayer</h3>
-        <p></p>
+        <p>创建角色返回数据</p>
 
         
 
         
       
         <h3 id="player.SCDelFriend">SCDelFriend</h3>
-        <p></p>
+        <p>删除好友返回数据</p>
 
         
           <table class="field-table">
@@ -581,7 +690,7 @@
         
       
         <h3 id="player.SCLogin">SCLogin</h3>
-        <p></p>
+        <p>登入返回数据</p>
 
         
           <table class="field-table">
@@ -605,7 +714,7 @@
         
       
         <h3 id="player.SCSendChatMsg">SCSendChatMsg</h3>
-        <p></p>
+        <p>聊天返回数据</p>
 
         
 

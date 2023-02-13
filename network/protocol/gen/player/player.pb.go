@@ -20,13 +20,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 请求登入
 type CSLogin struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserName string `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"`
-	Password string `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
+	UserName string `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"` //用户名
+	Password string `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"` //密码
 }
 
 func (x *CSLogin) Reset() {
@@ -75,6 +76,7 @@ func (x *CSLogin) GetPassword() string {
 	return ""
 }
 
+// 登入返回数据
 type SCLogin struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -122,13 +124,14 @@ func (x *SCLogin) GetOk() bool {
 	return false
 }
 
+// 请求创建角色
 type CSCreatePlayer struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserName string `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"`
-	Password string `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
+	UserName string `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"` //用户名
+	Password string `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"` //密码
 }
 
 func (x *CSCreatePlayer) Reset() {
@@ -177,6 +180,7 @@ func (x *CSCreatePlayer) GetPassword() string {
 	return ""
 }
 
+// 创建角色返回数据
 type SCCreatePlayer struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -215,6 +219,7 @@ func (*SCCreatePlayer) Descriptor() ([]byte, []int) {
 	return file_proto_player_proto_rawDescGZIP(), []int{3}
 }
 
+// 请求添加好友
 type CSAddFriend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -262,6 +267,7 @@ func (x *CSAddFriend) GetUId() uint64 {
 	return 0
 }
 
+// 添加好友返回数据
 type SCADDFriend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -309,6 +315,7 @@ func (x *SCADDFriend) GetDesc() string {
 	return ""
 }
 
+// 请求删除好友
 type CSDelFriend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -356,6 +363,7 @@ func (x *CSDelFriend) GetUId() uint64 {
 	return 0
 }
 
+// 删除好友返回数据
 type SCDelFriend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -403,7 +411,7 @@ func (x *SCDelFriend) GetDesc() string {
 	return ""
 }
 
-// 聊天请求
+// 请求聊天请求
 type CSSendChatMsg struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,6 +475,7 @@ func (x *CSSendChatMsg) GetCategory() int32 {
 	return 0
 }
 
+// 聊天返回数据
 type SCSendChatMsg struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -505,6 +514,7 @@ func (*SCSendChatMsg) Descriptor() ([]byte, []int) {
 	return file_proto_player_proto_rawDescGZIP(), []int{9}
 }
 
+// 聊天返回数据
 type ChatMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
